@@ -27,6 +27,6 @@ make post_images_1
 make post_images_2
 ```
 ```bash
-# "Некорректный запрос на обработку 2 изображений:
+# Некорректный запрос на обработку 2 изображений:
 make post_incorrect_input 
 ```
