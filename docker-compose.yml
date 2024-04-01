@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  plate_number_server:
+    build:
+      context: .
+      dockerfile: docker/plate_number/Dockerfile
+    ports:
+      - "8080:8080"
+    image: plate_number_server:0.0.1
+    volumes:
+      - ./src:/app/source
+      - ./model_weights:/app/model_weights
+
+  external_image_server:
+    build:
+      context: .
+      dockerfile: docker/image_server/Dockerfile
+    ports:
+      - "7777:7777"
+    image: eis:0.0.1
+    volumes:
+      - ./src:/app/source
+      - ./images:/app/images
